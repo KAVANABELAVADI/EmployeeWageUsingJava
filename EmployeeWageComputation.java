@@ -1,7 +1,24 @@
-public class EmployeeWageComputation
-{
-	public static void main(String args[])
-	{
-		System.out.println("Welcome to Employee Wage Computation Program on Master Branch");
-	}
+import java.util.Random;
+
+
+public class EmployeeWageComputation {
+      public static void main(String args[])
+      {
+		  final int Fulltime=8;
+		  final int Parttime=8;
+		  final int EmployeeRatePerHour=20;
+	          System.out.println("Welcome to Employee Wage Computation Program");
+                  Random rand = new Random();
+                  int attendance=rand.nextInt(2);
+			  if(attendance==0)
+			  {
+				 int workdone=rand.nextInt(2);
+				 if(workdone==0)
+					System.out.println("Emplyoyee's Daily Wage "+Fulltime*EmployeeRatePerHour);
+				 else	
+					System.out.println("Emplyoyee's Daily Wage "+Parttime*EmployeeRatePerHour);
+			  }
+                  	else
+                  		System.out.println("Emplyoyee is Absent");
+      }
 }
