@@ -9,7 +9,7 @@ class Computation{
 	Random rand = new Random();
 	void calculationOfTotalWage()
 	{
-		while(days_per_month!=days)
+		while(days_per_month!=days && hours_per_month<=100)
 		{
 		int attendance=rand.nextInt(2);
 		if(attendance==0)
@@ -27,6 +27,7 @@ class Computation{
 	void print()
 	{
 		System.out.println("Working Days of Employee :"+days_per_month);
+		System.out.println("working hours of Employee :"+hours_per_month);
 		System.out.println("DailyWage of Employee :"+dailyWage);
 		System.out.println("TotalWage of Employee :"+totalWage);
 	}
