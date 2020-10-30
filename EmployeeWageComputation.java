@@ -3,13 +3,19 @@ import java.util.Random;
 class Computation{
 	final int Fulltime=8;
 	final int Parttime=8;
-	final int EmployeeRatePerHour=20;
+	final int EmployeeRatePerHour;
 	int WorkDonePerDay,dailyWage,totalWage,hours_per_month=0,days_per_month=0 ;
-	int days=20;
+	int days, hours;
 	Random rand = new Random();
+	Computation(int EmployeeRatePerHour, int days, int hours)
+	{
+		this.EmployeeRatePerHour=EmployeeRatePerHour;
+		this.days=days;
+		this.hours=hours;
+	}
 	void calculationOfTotalWage()
 	{
-		while(days_per_month!=days && hours_per_month<=100)
+		while(days_per_month!=days && hours_per_month<=hours)
 		{
 		int attendance=rand.nextInt(2);
 		if(attendance==0)
@@ -48,8 +54,16 @@ public class EmployeeWageComputation {
       public static void main(String args[])
       {
 		System.out.println("Welcome to Employee Wage Computation Program");
-		Computation calculation=new Computation();
-		calculation.calculationOfTotalWage();    
-		calculation.print();      
+		Computation calculation[]=new Computation[3];
+		calculation[0]=new Computation(20,20,100);
+		calculation[1]=new Computation(30,22,110);
+		calculation[2]=new Computation(25,25,115);
+		for(int i=0;i<3;i++)
+		{
+			System.out.println("\n\nEmployee Wage of Company "+i);
+			calculation[i].calculationOfTotalWage();    
+			calculation[i].print(); 
+		}
+		     
       }
 }
